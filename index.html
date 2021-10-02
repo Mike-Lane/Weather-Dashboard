@@ -7,6 +7,7 @@
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -19,12 +20,21 @@
         <section class="col-md-3">
             <div id="search">
                 <h2>Search for a City:</h2>
+                <div id="cityInput" class="input-group md-form form-sm form-1 pl-0">
+                    <input id="input" class="form-control my-0 py-1" type="text" placeholder="Search" />
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="searchEl"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+                <div id="cityButtons">
+                    <ul></ul>
+                </div>
             </div>
         </section>
-        <section class="col-9">
+        <section class="col-md-9 container">
             <row>
-                <div id="city">
-                    <h2>City Placeholder</h2>
+                <div class="col-md-12">
+                    <div id="dailyWeather" class="body"></div>
                 </div>
             </row>
             <row>
@@ -36,5 +46,8 @@
     <footer>
 
     </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
