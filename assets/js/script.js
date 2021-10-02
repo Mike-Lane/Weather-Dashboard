@@ -156,5 +156,32 @@ function showWeather(cityInput) {
         
         showCities(); 
         }) 
-      }) 
-    }
+    }) 
+}
+
+function showCities() {
+    $("#cityButtons").empty(); // empties out previous array 
+    var arrayFromStorage = JSON.parse(localStorage.getItem("allCities")) || []; // Makes all cities searched a string
+    var arrayLength = arrayFromStorage.length; // limits length of array
+
+    for (var i = 0; i < arrayLength; i++) { // Loop so it prepends all cities within the length of the array
+      var cityNameFromArray = arrayFromStorage[i]; //
+
+        $("#cityButtons").append (
+          //styling 
+            "<div class='list-group'>"
+        
+        // City text
+        + "<button class='list-group-item'>" + cityNameFromArray 
+        + "</button>")
+    } // end of loop 
+  } // end of showCities function 
+
+  showCities (); // calls function to append cities upon page load 
+
+  // show cities on click 
+    $("#cityButtons").on("click", ".list-group-item", function(event) {
+    event.preventDefault();
+    var cityInput = ($(this).text());
+    showWeather(cityInput); 
+  }) // end of city buttons on click
